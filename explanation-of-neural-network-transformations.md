@@ -1,3 +1,6 @@
+TODO: rewrite this in terms of simpler maximum mutual information MMI principle: model goal is to minimize description length of data. Can be done in a piecewise fashion by maximizing the mutual information between each layer's activations and the data. If layers are bottlenecked, then this can only happen when salient features that are correlated with the output are learned. This is also equivalent to maximizing the throughput of the network (i.e. how much information about the input can be ascertained from the penultimate layer activations).
+
+
 TLDR; each layer in an MLP aims to maximize the mutual information between its activation $\mathbf{z}$ and the label $\hat{\mathbf{y}}$.
 
 Idea, show these two concepts are equivalent:
