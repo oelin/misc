@@ -6,6 +6,13 @@ Idea, show these two concepts are equivalent:
 
 * 2. Each layer maximizes information content of its activations.
 
+(1) Is really nice because it has the following corrolary:
+> The more successful a layer is in doing this (maximizing MI), the fewer subsequent layers we need to handle the residual uncertainity in $\hat{\mathbf{y}}$.
+
+This explains why we need multiple layers for complex problems. A single linear layer may not increase the mutual information between the activations and $\hat{\mathbf{y}}$ enough to allow for strong predictive performance. Thus, we need more layers to handle the additional entropy. Each layer can be thought of as "chipping away" a small bit of uncertainity about $y$.
+
+
+
 Both ideas give an intuition behind autoencoder and regular MLPs. They both seem to imply eachother. If (1) then the entropy of $\hat{\mathbf{y}}|\hat{\mathbf{z}}$ will be minimized. If (2), then clearly this will also be the case. If (2), then bottlenecked layers must maintain the correlation between the activation and the output which implies (1). (2) makes this more obvious though so it's a neater principle.
 
 Overall, if a layer induces bottlenecking then $H[z_{n + 1}] \le H[z_n]$, however the aim is for $H[y|z_{n+1}] \ge H[y|z]$. 
