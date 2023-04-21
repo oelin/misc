@@ -1,3 +1,6 @@
+TLDR; each layer in an MLP aims to maximize the mutual information between its activation $\mathbf{z}$ and the label $\hat{\mathbf{y}}$.
+
+
 TODO: make this more concise
 
 In supervised learning, $D$ is typically a set of i.i.d. examples $\left\{\left(\hat{\mathbf{x}}_0, \hat{\mathbf{y}}_0\right), \dots, \left(\hat{\mathbf{x}}_n, \hat{\mathbf{y}}_n\right) \right\}$ drawn from some multinomial joint distribution $p_{\mathbf{x}, \mathbf{y}}$. As we usually avoid modelling $\mathbf{x}$, we have that
