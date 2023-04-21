@@ -1,7 +1,16 @@
 TLDR; each layer in an MLP aims to maximize the mutual information between its activation $\mathbf{z}$ and the label $\hat{\mathbf{y}}$.
 
+Idea, show these two concepts are equivalent:
 
-TODO: make this more concise
+* 1. Each layer maximizes mutual information/correlation of its activations with with $\mathbf{y}$.
+
+* 2. Each layer maximizes information content of its activations.
+
+Both ideas give an intuition behind autoencoder and regular MLPs. They both seem to imply eachother. If (1) then the entropy of $\hat{\mathbf{y}}|\hat{\mathbf{z}}$ will be minimized. If (2), then clearly this will also be the case. If (2), then bottlenecked layers must maintain the correlation between the activation and the output which implies (1). (2) makes this more obvious though so it's a neater principle.
+
+Overall, if a layer induces bottlenecking then $H[z_{n + 1}] \le H[z_n]$, however the aim is for $H[y|z_{n+1}] \ge H[y|z]$. 
+
+TODO: make this more concise.
 
 In supervised learning, $D$ is typically a set of i.i.d. examples $\left\{\left(\hat{\mathbf{x}}_0, \hat{\mathbf{y}}_0\right), \dots, \left(\hat{\mathbf{x}}_n, \hat{\mathbf{y}}_n\right) \right\}$ drawn from some multinomial joint distribution $p_{\mathbf{x}, \mathbf{y}}$. As we usually avoid modelling $\mathbf{x}$, we have that
 
